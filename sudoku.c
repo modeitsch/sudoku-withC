@@ -25,8 +25,9 @@ bool solve_Sudoku(int array[][SIZE*SIZE], int row,int col);
 
 int main(){
   int sudoku[SIZE*SIZE][SIZE*SIZE];
+
   
-   data_array (sudoku, SIZE*SIZE);
+    data_array (sudoku, SIZE*SIZE);
 
     if(solve_Sudoku(sudoku, 0, 0))
     {
@@ -124,12 +125,12 @@ for (i = 0; i < size; i++)
 // this functions checks the input of the user
 int check_input (int input)
 {
-  while (input < 0 || input >= 5)
+  while (input < 0 || input >= 10)
     {
 
-      printf ("Enter a number between 0 and 4 : ");
+      printf ("Enter a number between 0 and 4 for 2*2 or 0-9 fir 3*3: ");
       scanf ("%d", &input);
-      if (input < 0 || input >= 5)
+      if (input < 0 || input >= 10)
 	printf ("Out of range\n");
     }
   return input;
@@ -188,9 +189,9 @@ bool check_square(int array[][SIZE * SIZE], int value, int row, int col)
 {
     int row_start, col_start;
     
-    for(row_start = row/SIZE*SIZE; row_start < SIZE; row_start++)
+    for(row_start = row/SIZE*SIZE; row_start < row/SIZE*SIZE +SIZE; row_start++)
     {
-        for(col_start = col/SIZE*SIZE; col_start < SIZE; col_start++)
+        for(col_start = col/SIZE*SIZE; col_start < col/SIZE*SIZE +SIZE; col_start++)
         {
             if(array[row_start][col_start] == value && row_start != row && col_start != col)
             return false;
