@@ -3,8 +3,8 @@
 #include <stdbool.h>
 
 #define SIZE 2
-#define min_number 0
-#define max_number 4
+#define MIN_NUMBER 0
+#define MAX_NUMBER 4
 
 // this function taks numbers to the array
 void data_array(int array[][SIZE*SIZE], int size);
@@ -127,12 +127,12 @@ for (i = 0; i < size; i++)
 // this functions checks the input of the user
 int check_input (int input)
 {
-  while (input < min_number || input > max_number)
+  while (input < MIN_NUMBER || input > MAX_NUMBER)
     {
 
       printf ("Enter a number between 0 and 4 for 2*2 or 0-9 fir 3*3: ");
       scanf ("%d", &input);
-      if (input < min_number || input > max_number)
+      if (input < MIN_NUMBER || input > MAX_NUMBER)
 	printf ("Out of range\n");
     }
   return input;
